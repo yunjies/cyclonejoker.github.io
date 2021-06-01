@@ -1,3 +1,3 @@
-# redirecter.github.io
+# cyclonejoker.github.io
 
 Redirect to cyclonejoker.xyz
