@@ -11,3 +11,5 @@ git push
 
 echo "Updating nginx"
 python3 ./GenerateNginxConfig.py
+nginx -t
+nginx -s reload
