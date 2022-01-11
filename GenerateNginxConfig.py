@@ -63,7 +63,7 @@ server {{
 }}
 '''
 
-CONFIG_PATH = './etc/nginx/conf.d/cyclonejoker.xyz.conf'
+CONFIG_PATH = '/etc/nginx/conf.d/cyclonejoker.xyz.conf'
 
 def main():
     configs = readConfig()
