@@ -53,12 +53,7 @@ server {{
     
     location / {{
         proxy_set_header X-Real-IP $remote_addr;
-        proxy_pass {}://{}:{};
-        proxy_http_version 1.1;
-        proxy_buffering off;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection "Upgrade";
-        proxy_read_timeout 86400;
+        proxy_pass {}://{}:{};{}
     }}
 }}
 '''
@@ -70,7 +65,7 @@ def main():
     data = [CONTENT_80, CONTENT_443]
     for config in configs:
         if 'source_ip' in config:
-            data.append(TEMPLATE_SERVER.format(config['port'], 'https', config['source_ip'], config['source_port']))
+            data.append(TEMPLATE_SERVER.format(config['port'], 'https', config['source_ip'], config['source_port'], config['addtion_location'] if 'addtion_location' in config else ''))
     
     with open(CONFIG_PATH, 'w', encoding='utf-8') as f:
         f.writelines(data)

@@ -11,7 +11,8 @@
         "port": 13822,
         "source_ip": "192.168.1.217",
         "source_port": 8123,
-        "https": false
+        "https": false,
+        "addition_location": "\nproxy_http_version 1.1;\nproxy_buffering off;\nproxy_set_header Upgrade $http_upgrade;\nproxy_set_header Connection \"Upgrade\";\nproxy_read_timeout 86400;"
     },
     {
         "name": "jellyfin",
@@ -53,7 +54,8 @@
         "port": 13880,
         "source_ip": "192.168.1.217",
         "source_port": 80,
-        "https": false
+        "https": false,
+        "addition_location": "\nproxy_set_header X-Real-IP $remote_addr;\nproxy_set_header Upgrade $http_upgrade;\nproxy_set_header Connection \"Upgrade\";"
     },
     {
         "name": "transmission",
@@ -71,6 +73,7 @@
         "port": 19910,
         "source_ip": "192.168.1.217",
         "source_port": 9910,
-        "https": false
+        "https": false,
+        "addition_location": "\nproxy_http_version 1.1;\nproxy_buffering off;\nproxy_set_header Upgrade $http_upgrade;\nproxy_set_header Connection \"Upgrade\";\nproxy_read_timeout 86400;"
     }
 ]   
