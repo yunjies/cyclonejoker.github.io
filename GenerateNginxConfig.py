@@ -52,7 +52,6 @@ server {{
     ssl_prefer_server_ciphers on;
     
     location / {{
-        proxy_set_header X-Real-IP $remote_addr;
         proxy_pass {}://{}:{};{}
     }}
 }}
