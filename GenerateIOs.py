@@ -20,7 +20,7 @@ def checkFileNeedUpdate(filepath, port):
     if os.path.exists(filepath):
         with open(filepath, 'r', encoding='utf-8') as f:
             r = CONTENT_MATCH.search(f.read())
-            if r[2] == port:
+            if r and r[1] == port:
                 return False
     return True
 
