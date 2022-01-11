@@ -1,0 +1,46 @@
+[
+    {
+        "name": "cctv",
+        "port": 13899
+    },
+    {
+        "name": "homeassistant",
+        "port": 13822
+    },
+    {
+        "name": "jellyfin",
+        "port": 13896
+    },
+    {
+        "name": "nextcloud",
+        "port": 13877
+    },
+    {
+        "name": "openwrt",
+        "port": 13801
+    },
+    {
+        "name": "portainer",
+        "port": 13890
+    },
+    {
+        "name": "qb",
+        "port": 13888
+    },
+    {
+        "name": "theworld",
+        "port": 13880
+    },
+    {
+        "name": "transmission",
+        "port": 13891
+    },
+    {
+        "name": "unifi",
+        "port": 13824
+    },
+    {
+        "name": "filebrowser",
+        "port": 19910
+    }
+]   
