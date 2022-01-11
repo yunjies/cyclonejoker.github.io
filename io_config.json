@@ -3,7 +3,6 @@
         "name": "cctv",
         "port": 13899,
         "source_ip": "192.168.1.157",
-        "source_port": 80,
         "https": false
     },
     {
@@ -53,7 +52,6 @@
         "name": "theworld",
         "port": 13880,
         "source_ip": "192.168.1.217",
-        "source_port": 80,
         "https": false,
         "addition_location": "\n        proxy_set_header X-Real-IP $remote_addr;\n        proxy_set_header Upgrade $http_upgrade;\n        proxy_set_header Connection \"Upgrade\";"
     },
