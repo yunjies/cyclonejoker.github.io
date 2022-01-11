@@ -21,7 +21,6 @@ server {
     ssl_prefer_server_ciphers on;
 
     location /wss/ {
-        
         proxy_pass https://192.168.1.224:8443;
         proxy_http_version 1.1;
         proxy_buffering off;
@@ -52,7 +51,7 @@ server {{
     ssl_prefer_server_ciphers on;
     
     location / {{
-        proxy_pass {}://{}:{};{}
+        proxy_pass {}://{}{};{}
     }}
 }}
 '''
@@ -67,7 +66,7 @@ def main():
             port = config['port']
             https = 'https' if config['https'] == True else 'http'
             source_ip = config['source_ip']
-            source_port = config['source_port']
+            source_port = (':' + config['source_port']) if 'source_port' in config else ''
             addition_location = config['addition_location'] if ('addition_location' in config) else ''
             data.append(TEMPLATE_SERVER.format(port, https, source_ip, source_port, addition_location))
     
