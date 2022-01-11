@@ -1,7 +1,8 @@
-import os, json
+import os, json, re
 
 TEMPLATE_PATH = 'template.html'
 IO_CONFIG_PATH = 'io_config.json'
+CONTENT_MATCH = re.compile(r'window.location.href="https://cyclonejoker.xyz:([0-9]+)"')
 
 def readConfig():
     data = {}
@@ -15,6 +16,14 @@ def readTemplate():
         data = f.read()
     return data
 
+def checkFileNeedUpdate(filepath, port):
+    if os.path.exists(filepath):
+        with open(filepath, 'r', encoding='utf-8') as f:
+            r = CONTENT_MATCH.search(f.read())
+            if r[2] == port:
+                return False
+    return True
+
 def main():
     configs = readConfig()
     tempate = readTemplate()
@@ -24,11 +33,9 @@ def main():
             os.mkdir(name)
 
         indexFilePath = name + '/index.html'
-        if os.path.exists(indexFilePath):
-            os.remove(indexFilePath)
-        
-        with open(indexFilePath, 'w', encoding='utf-8') as f:
-            f.write(tempate.format(config['port']))
+        if checkFileNeedUpdate(indexFilePath, config['port']):
+            with open(indexFilePath, 'w', encoding='utf-8') as f:
+                f.write(tempate.format(config['port']))
 
 if __name__ == "__main__":
     main()
