@@ -64,7 +64,7 @@ def main():
     data = [CONTENT_80, CONTENT_443]
     for config in configs:
         if 'source_ip' in config:
-            data.append(TEMPLATE_SERVER.format(config['port'], 'https', config['source_ip'], config['source_port'], config['addtion_location'] if 'addtion_location' in config else ''))
+            data.append(TEMPLATE_SERVER.format(config['port'], 'https' if config['https'] == True else 'http', config['source_ip'], config['source_port'], config['addtion_location'] if 'addtion_location' in config else ''))
     
     with open(CONFIG_PATH, 'w', encoding='utf-8') as f:
         f.writelines(data)
