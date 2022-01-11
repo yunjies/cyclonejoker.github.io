@@ -66,7 +66,7 @@ def main():
             port = config['port']
             https = 'https' if config['https'] == True else 'http'
             source_ip = config['source_ip']
-            source_port = (':' + config['source_port']) if 'source_port' in config else ''
+            source_port = (':' + str(config['source_port'])) if 'source_port' in config else ''
             addition_location = config['addition_location'] if ('addition_location' in config) else ''
             data.append(TEMPLATE_SERVER.format(port, https, source_ip, source_port, addition_location))
     
