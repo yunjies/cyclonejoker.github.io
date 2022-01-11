@@ -1,39 +1,66 @@
 [
     {
         "name": "cctv",
-        "port": 13899
+        "port": 13899,
+        "source_ip": "192.168.1.157",
+        "source_port": 80,
+        "https": false
     },
     {
         "name": "homeassistant",
-        "port": 13822
+        "port": 13822,
+        "source_ip": "192.168.1.217",
+        "source_port": 8123,
+        "https": false
     },
     {
         "name": "jellyfin",
-        "port": 13896
+        "port": 13896,
+        "source_ip": "192.168.1.217",
+        "source_port": 8096,
+        "https": false
     },
     {
         "name": "nextcloud",
-        "port": 13877
+        "port": 13877,
+        "source_ip": "192.168.1.217",
+        "source_port": 7000,
+        "https": true
     },
     {
         "name": "openwrt",
-        "port": 13801
+        "port": 13801,
+        "source_ip": "192.168.1.1",
+        "source_port": 80,
+        "https": false
     },
     {
         "name": "portainer",
-        "port": 13890
+        "port": 13890,
+        "source_ip": "192.168.1.217",
+        "source_port": 9000,
+        "http": false
     },
     {
         "name": "qb",
-        "port": 13888
+        "port": 13888,
+        "source_ip": "192.168.1.217",
+        "source_port": 8080,
+        "https": false
     },
     {
         "name": "theworld",
-        "port": 13880
+        "port": 13880,
+        "source_ip": "192.168.1.217",
+        "source_port": 80,
+        "https": false
     },
     {
         "name": "transmission",
-        "port": 13891
+        "port": 13891,
+        "source_ip": "192.168.1.217",
+        "source_port": 9091,
+        "https": false
     },
     {
         "name": "unifi",
@@ -41,6 +68,9 @@
     },
     {
         "name": "filebrowser",
-        "port": 19910
+        "port": 19910,
+        "source_ip": "192.168.1.217",
+        "source_port": 9910,
+        "https": false
     }
 ]   
